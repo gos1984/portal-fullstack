@@ -1,0 +1,222 @@
+/* You can add global styles to this file, and also import other style files */
+@import "fonts";
+@import "variables";
+
+body {
+  background: $grey_light;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Nunito, arial sans-serif;
+  padding: 0;
+  margin: 0;
+  color: #6c757d;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+h1, h2, h3 {
+  font-family: Nunito-Bold, arial sans-serif;
+}
+
+h1, h2 {
+  color: $blue_dark;
+}
+
+h1 {
+  display: inline-block;
+  margin-top: 3px;
+  margin-bottom: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+h2 {
+
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 28px;
+  padding-right: 10px;
+  margin-bottom: 0;
+  color: $blue_black;
+}
+
+p {
+
+}
+
+span {
+
+}
+
+
+a {
+  transition: $transition;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+input, select, textarea, button {
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.btn {
+  transition: $transition;
+
+  &.btn-primary {
+    box-shadow: 0 2px 6px $violet;
+    background-color: $violet;
+    border-color: $violet;
+
+    &:hover {
+      background-color: $violet_hover;
+      border-color: $violet_hover;
+    }
+  }
+
+  &.btn-danger {
+    box-shadow: 0 2px 6px $red;
+    background-color: $red;
+    border-color: $red;
+
+    &:hover {
+      background-color: $red_hover;
+      border-color: $red_hover;
+    }
+  }
+
+  &.btn-success {
+    box-shadow: 0 2px 6px $green;
+    background-color: $green;
+    border-color: $green;
+
+    &:hover {
+      background-color: $green_hover;
+      border-color: $green_hover;
+    }
+  }
+
+  &.btn-warning {
+    box-shadow: 0 2px 6px $yellow;
+    background-color: $yellow;
+    border-color: $yellow;
+    color: $white;
+
+    &:hover {
+      background-color: $yellow_hover;
+      border-color: $yellow_hover;
+    }
+  }
+
+  &:hover, &:focus {
+    box-shadow: none !important;
+  }
+}
+
+
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  cursor: pointer;
+
+  .fa, .far, .fas {
+    font-size: 18px;
+    line-height: 32px;
+    color: $black;
+  }
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+
+.section {
+  position: relative;
+  padding: 20px 25px;
+  margin-bottom: 30px;
+  background: $white;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0.4rem 2.1rem rgba(90, 97, 105, 0.1),
+  0 0.9rem 1.4rem rgba(90, 97, 105, 0.1),
+  0 0.25rem 0.5rem rgba(90, 97, 105, 0.12),
+  0 0.1rem 0.1rem rgba(90, 97, 105, 0.1);
+}
+
+.header {
+  padding: 0 5px;
+  margin-bottom: 20px;
+}
+
+.footer {
+  padding: 30px 0;
+}
+
+.tools {
+  select {
+    max-width: 80px;
+    margin: 0 20px;
+    padding: 5px;
+  }
+
+  .pagination {
+    margin: 0;
+  }
+
+}
+
+.th-center {
+  .mat-sort-header-container {
+    justify-content: center;
+    margin-left: 12px;
+  }
+}
+
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+
+
+.mat-drawer-container {
+  min-height: 100vh;
+}
+
+
+
+
+.mat-expansion-indicator {
+  &::after {
+    color: $white;
+  }
+}
+
+.mat-drawer {
+  background: $blue_black;
+}
+
+
+.title {
+  margin: 10px 0;
+}
+

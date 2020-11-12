@@ -1,0 +1,19 @@
+@import "fonts";
+@import "variables";
+
+.content {
+  padding-left: 250px;
+  transition: $transition;
+  &.full {
+    padding-left: 65px;
+  }
+  &__wrapper {
+    padding: 30px;
+  }
+}
+
+
+
+
+
+

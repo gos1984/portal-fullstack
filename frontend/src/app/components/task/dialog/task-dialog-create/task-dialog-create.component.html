@@ -1,0 +1,30 @@
+<div class="dialog">
+  <div mat-dialog-actions class="close">
+    <button mat-button mat-dialog-close class="btn btn-block"><i class="fas fa-times"></i></button>
+  </div>
+  <h1 mat-dialog-title>Новая задача</h1>
+  <div mat-dialog-content>
+    <mat-form-field appearance="outline" class="label">
+      <mat-label>Наименование</mat-label>
+      <input matInput [(ngModel)]="task.name" autocomplete="off">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Приоритет</mat-label>
+      <mat-select [(ngModel)]="task.priority">
+        <mat-option *ngFor="let p of priorityKeys()" [value]="p">
+          {{priority[p]}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline" class="label">
+      <mat-label>Описание</mat-label>
+      <textarea matInput [(ngModel)]="task.description"></textarea>
+    </mat-form-field>
+    <br>
+    <button class="btn btn-success" (click)="create()">Сохранить</button>
+  </div>
+</div>
+
+

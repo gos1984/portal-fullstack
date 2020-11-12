@@ -1,0 +1,85 @@
+<div class="header">
+  <mat-form-field *ngIf="edit; else editTitle">
+    <input matInput [(ngModel)]="project.name" [value]="project?.name">
+  </mat-form-field>
+</div>
+<section class="section">
+  <div class="row no-gutters">
+    <div class="col-12">
+      <div class="d-flex justify-content-between align-items-center title">
+        <h3>О проекте</h3>
+
+        <button class="btn btn-success" (click)="update()" *ngIf="edit; else editButton"><i class="fas fa-sync"></i>
+        </button>
+
+      </div>
+      <table class="table">
+        <tr>
+          <th>Описание</th>
+          <td *ngIf="edit; else elseDescription">
+            <mat-form-field>
+              <textarea matInput [(ngModel)]="project.description">{{ project?.description }}</textarea>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <th>Дата создания</th>
+          <td>{{project?.create | date: 'dd.MM.yyyy'}}</td>
+        </tr>
+        <tr *ngIf="project?.modification != null">
+          <th>Дата обновления</th>
+          <td>{{project?.modification | date: 'dd.MM.yyyy'}}</td>
+        </tr>
+        <tr>
+          <th>Статус</th>
+          <td *ngIf="edit; else elseStatus">
+            <mat-form-field appearance="outline">
+              <mat-select [(ngModel)]="project.status">
+                <mat-option *ngFor="let s of statusKeys()" [value]="s">
+                  {{status[s]}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td *ngIf="edit; else elseUrl">
+            <mat-form-field>
+              <input matInput [(ngModel)]="project.url" [value]="project?.url">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="row no-gutters">
+    <div class="col-12">
+      <h3>Стадии разработки</h3>
+    </div>
+  </div>
+</section>
+<app-task-list></app-task-list>
+<section class="section">
+  <div class="row no-gutters">
+    <div class="col-12">
+      <h3>Форум</h3>
+    </div>
+  </div>
+</section>
+
+<ng-template #elseDescription>
+  <td>{{project?.description}}</td>
+</ng-template>
+<ng-template #elseStatus>
+  <td>{{getStatus(project?.status)}}</td>
+</ng-template>
+<ng-template #elseUrl>
+  <td><a href="//{{ project?.url }}" target="_blank">{{project?.url}}</a></td>
+</ng-template>
+<ng-template #editButton>
+  <button class="btn btn-warning" (click)="editToggle()"><i class="far fa-edit"></i></button>
+</ng-template>
+<ng-template #editTitle><h1>{{ title }}</h1></ng-template>

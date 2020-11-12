@@ -1,0 +1,32 @@
+$grey: #868e96;
+$grey_light: #F6F6F6;
+$grey_white: #ebecf1;
+
+$blue: #3abaf4;
+$blue_dark: #34395e;
+$blue_black: #353c48;
+
+$violet: #6777ef;
+$violet_hover: #4f5ece;
+
+$white: #ffffff;
+$black: #000000;
+
+$red: #fc544b;
+$red_hover: #fb160a;
+
+$green: #54ca68;
+$green_hover: #54ca68;
+$yellow: #ffc107;
+$yellow_hover: #ff990d;
+
+$transition: all .3s ease;
+
+
+@mixin pseudo($pos, $disp) {
+  content: '';
+  position: $pos;
+  display: $disp;
+}
+
+

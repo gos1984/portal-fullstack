@@ -1,0 +1,19 @@
+@import "fonts";
+@import "variables";
+
+.header {
+  padding: 20px 30px;
+  background: $white;
+  box-shadow: 0 0.4rem 2.1rem rgba(90, 97, 105, 0.1),
+  0 0.9rem 1.4rem rgba(90, 97, 105, 0.1),
+  0 0.25rem 0.5rem rgba(90, 97, 105, 0.12),
+  0 0.1rem 0.1rem rgba(90, 97, 105, 0.1);
+}
+
+
+.account {
+  &__item {
+    margin: 0 10px;
+  }
+}
+

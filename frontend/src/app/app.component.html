@@ -1,0 +1,11 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" [(opened)]="sidenav"><app-sidebar *ngIf="getAuthentication"></app-sidebar></mat-sidenav>
+  <mat-sidenav-content>
+    <main>
+      <app-header *ngIf="getAuthentication" (sidenavToggle)="sidenavToggle(sidenav)"></app-header>
+      <div class="content__wrapper">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

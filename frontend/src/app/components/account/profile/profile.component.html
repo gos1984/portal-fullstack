@@ -1,0 +1,74 @@
+<div class="header">
+  <h1>{{ user?.username }}</h1>
+</div>
+<section class="section">
+  <div class="row no-gutters">
+    <div class="col-12">
+      <div class="d-flex justify-content-between align-items-center title">
+        <h3>Профиль</h3>
+
+        <button class="btn btn-success" (click)="update()" *ngIf="edit; else editButton"><i class="fas fa-sync"></i>
+        </button>
+
+      </div>
+      <table class="table">
+        <tr>
+          <th>Ф.И.О.</th>
+          <td *ngIf="edit; else elseFio">
+            <mat-form-field>
+              <input matInput [(ngModel)]="user.lastName" [value]="user.lastName">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <input matInput [(ngModel)]="user.firstName" [value]="user.firstName">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <input matInput [(ngModel)]="user.patronymic" [value]="user.patronymic">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <th>Должность</th>
+          <td *ngIf="edit; else elsePosition">
+            <mat-form-field>
+              <input matInput [(ngModel)]="user.position" [value]="user?.position">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <th>Телефон</th>
+          <td *ngIf="edit; else elsePhone">
+            <mat-form-field>
+              <input matInput [(ngModel)]="user.phone" [value]="user?.phone">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <th>E-mail</th>
+          <td *ngIf="edit; else elseEmail">
+            <mat-form-field>
+              <input matInput [(ngModel)]="user.email" [value]="user?.email">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<ng-template #elseFio>
+  <td>{{user?.lastName}} {{user?.firstName}} {{user?.patronymic}}</td>
+</ng-template>
+<ng-template #elsePosition>
+  <td>{{user?.position}}</td>
+</ng-template>
+<ng-template #elsePhone>
+  <td><a href="tel:{{ user?.phone }}">{{ user?.phone }}</a></td>
+</ng-template>
+<ng-template #elseEmail>
+  <td><a href="mailto:{{ user?.email }}">{{ user?.email }}</a></td>
+</ng-template>
+<ng-template #editButton>
+  <button class="btn btn-warning" (click)="editToggle()"><i class="far fa-edit"></i></button>
+</ng-template>

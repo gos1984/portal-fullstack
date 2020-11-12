@@ -1,0 +1,31 @@
+@import "fonts";
+@import "variables";
+
+.completed {
+  text-decoration: line-through;
+  color: $grey;
+}
+
+.create {
+  margin-bottom: 20px;
+}
+
+
+.priority {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+
+  &.little {
+    background: $green;
+  }
+
+  &.middle {
+    background: $yellow;
+  }
+  &.important {
+    background: $red;
+  }
+}
+

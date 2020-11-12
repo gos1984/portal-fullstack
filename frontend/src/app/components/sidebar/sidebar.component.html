@@ -1,0 +1,48 @@
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar__wrapper">
+    <a class="sidebar__logo" routerLink="/">
+      <img src="assets/img/logo.png"><span class="title">IT Портал</span>
+    </a>
+
+<!--    <nav class="sidebar__menu">-->
+<!--      <span class="sidebar__menu-header">Документооборот</span>-->
+<!--      <mat-accordion>-->
+<!--        <mat-expansion-panel (opened)="panelOpenState = true"-->
+<!--                             (closed)="panelOpenState = false"-->
+<!--                             [class.active]="panelOpenState">-->
+<!--          <mat-expansion-panel-header>-->
+<!--            <mat-panel-title class="sidebar__menu-title">-->
+<!--              <i class="far fa-file-alt"></i>-->
+<!--              <span>Заявления</span>-->
+<!--            </mat-panel-title>-->
+<!--          </mat-expansion-panel-header>-->
+<!--          <ul class="sidebar__menu-submenu">-->
+<!--            <li><a href="#">На удаленную работу</a></li>-->
+<!--          </ul>-->
+<!--        </mat-expansion-panel>-->
+<!--      </mat-accordion>-->
+<!--    </nav>-->
+
+    <nav class="sidebar__menu">
+      <span class="sidebar__menu-header">Проекты</span>
+      <mat-accordion *ngFor="let project of projects"
+                     [ngClass]="{'active' : selectedProject === project}"
+                     routerLinkActive="active-link">
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="sidebar__menu-title">
+              <i class="fas fa-layer-group"></i>
+              <span>{{ project.name }}</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ul class="sidebar__menu-submenu">
+            <li><a routerLink="/projects/{{ project.id }}">О проекте</a></li>
+            <li><a routerLink="/projects/{{ project.id }}">Задачи</a></li>
+            <li><a routerLink="/projects/{{ project.id }}">Форум</a></li>
+          </ul>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </nav>
+  </div>
+</aside>

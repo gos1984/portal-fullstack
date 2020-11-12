@@ -1,0 +1,24 @@
+<h1 class="center">Войти в аккаунт</h1>
+<div class="row no-gutters justify-content-center align-items-center">
+  <div class="col-3">
+    <section class="section">
+      <div *ngIf="showLoginForm">
+        <mat-form-field appearance="outline">
+          <mat-label>Логин</mat-label>
+          <input matInput [(ngModel)]="user.username" autocomplete="off" (keyup.enter)="login()">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Пароль</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="user.password" autocomplete="off"
+                 (keyup.enter)="login()">
+          <div mat-icon-button matSuffix class="icon">
+            <mat-icon (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </div>
+        </mat-form-field>
+        <div class="right">
+          <button class="btn btn-success" (click)="login()">Войти</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
